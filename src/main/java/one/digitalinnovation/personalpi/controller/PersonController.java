@@ -1,8 +1,8 @@
 package one.digitalinnovation.personalpi.controller;
 
 
+import one.digitalinnovation.personalpi.dto.request.PersonDTO;
 import one.digitalinnovation.personalpi.dto.response.MessageResponseDTO;
-import one.digitalinnovation.personalpi.entity.Person;
 import one.digitalinnovation.personalpi.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,8 +21,8 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponseDTO createPerson(@RequestBody Person person){
-        return personService.createPerson(person);
+    public MessageResponseDTO createPerson(@RequestBody PersonDTO personDTO){
+        return personService.createPerson(personDTO);
     }
 
 }
